@@ -32,11 +32,46 @@ return new class extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->string('name');
-            $table->dropColumn('first_name');
-            $table->dropColumn('last_name');
-            $table->dropColumn('username');
-            $table->dropColumn('is_admin');
-            $table->dropColumn('is_active');
         });
+
+        if (Schema::hasColumn('users', 'first_name'))
+        {
+            Schema::table('users', function (Blueprint $table)
+            {
+                $table->dropColumn('first_name');
+            });
+        }
+
+        if (Schema::hasColumn('users', 'last_name'))
+        {
+            Schema::table('users', function (Blueprint $table)
+            {
+                $table->dropColumn('last_name');
+            });
+        }
+
+        if (Schema::hasColumn('users', 'username'))
+        {
+            Schema::table('users', function (Blueprint $table)
+            {
+                $table->dropColumn('username');
+            });
+        }
+
+        if (Schema::hasColumn('users', 'is_admin'))
+        {
+            Schema::table('users', function (Blueprint $table)
+            {
+                $table->dropColumn('is_admin');
+            });
+        }
+
+        if (Schema::hasColumn('users', 'is_active'))
+        {
+            Schema::table('users', function (Blueprint $table)
+            {
+                $table->dropColumn('is_active');
+            });
+        }
     }
 };

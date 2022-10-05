@@ -15,4 +15,23 @@ return [
     'register' => 'Register',
     'forgotPassword' => 'Forgot your password?',
     'confirmPassword' => 'Confirm password',
+
+    'user' => [
+        'title' => 'User',
+        'add' => 'Add',
+        'list' => 'User List',
+        'no' => 'No.',
+        'username' => 'Username',
+        'email' => 'Email Address',
+        'action' => 'Action',
+        'show' => 'Show',
+        'edit' => 'Edit',
+        'delete' => 'Delete',
+    ],
+
+    'post' => [
+        'add' => 'Add',
+        'title' => 'Title',
+        'body' => 'Body',
+    ],
 ];

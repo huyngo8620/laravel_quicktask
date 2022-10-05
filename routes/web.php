@@ -20,9 +20,20 @@ use Illuminate\Support\Facades\Auth;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
-Route::resource('users', UserController::class)->middleware('admin');
+// Route::resource('users', UserController::class)->middleware('admin');
+//User
+Route::prefix('users')->name('users.')->controller(UserController::class)->group(function () {
+    Route::get('', 'index')->name('index');
+    Route::get('create', 'create')->name('create');
+    Route::get('{id}', 'show')->name('show');
+    Route::get('{id}/edit', 'edit')->name('edit');
+    Route::post('', 'store')->name('store');
+    Route::put('{id}', 'update')->name('update');
+    Route::delete('{id}', 'destroy')->name('destroy');
+});
 
-Route::prefix('posts')->name('posts')->controller(PostController::class)->group(function () {
+//Post
+Route::prefix('posts')->name('posts.')->controller(PostController::class)->group(function () {
     Route::get('', 'index')->name('index');
     Route::get('create', 'create')->name('create');
     Route::post('', 'store')->name('store');

@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class UserController extends Controller
 {
@@ -13,7 +15,9 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        $users = User::all();
+
+        return view('users.index', compact('users'));
     }
 
     /**
@@ -23,7 +27,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        return view('users.create');
     }
 
     /**
@@ -45,7 +49,9 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+        $users = User::find($id);
+
+        return view('users.show', compact('users'));
     }
 
     /**
@@ -56,7 +62,9 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+        $users = User::find($id);
+
+        return view('users.edit', compact('users'));
     }
 
     /**

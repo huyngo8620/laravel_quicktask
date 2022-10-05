@@ -16,3 +16,5 @@ return [
     'forgotPassword' => 'Quên mật khẩu?',
     'confirmPassword' => 'Xác nhận mật khẩu',
 ];
+
+?>

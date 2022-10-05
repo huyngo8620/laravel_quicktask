@@ -34,6 +34,6 @@ Route::prefix('posts')->name('posts')->controller(PostController::class)->group(
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->middleware('localization')->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('language/{lang}', [LanguageController::class, 'changeLanguage'])->middleware('localization')->name('language');

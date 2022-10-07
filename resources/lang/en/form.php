@@ -17,4 +17,3 @@ return [
     'confirmPassword' => 'Confirm password',
 ];
 
-?>

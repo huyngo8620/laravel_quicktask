@@ -17,4 +17,3 @@ return [
     'confirmPassword' => 'Xác nhận mật khẩu',
 ];
 
-?>

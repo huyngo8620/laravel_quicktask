@@ -36,4 +36,6 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('language/{lang}', [LanguageController::class, 'changeLanguage'])->middleware('localization')->name('language');
+Route::group(['middleware' => 'localization'], function () {
+    Route::get('language/{lang}', [LanguageController::class, 'changeLanguage'])->name('language');
+});

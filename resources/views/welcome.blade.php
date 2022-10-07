@@ -119,6 +119,8 @@
                             <a href="https://github.com/sponsors/taylorotwell" class="ml-1 underline">
                                 Sponsor
                             </a>
+                            <a class="ml-2" href="{{ route('lang',['lang' => 'vi']) }}">VI |</a>
+                            <a href="{{ route('lang',['lang' => 'en' ]) }}">EN</a>
                         </div>
                     </div>
 
